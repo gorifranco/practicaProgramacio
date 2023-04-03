@@ -2,6 +2,7 @@ package com.tyu;
 
 import java.time.Month;
 import java.time.Year;
+import java.util.ArrayList;
 
 public class Tenda {
     private LlistaJuguetes cataleg;
@@ -122,6 +123,15 @@ public class Tenda {
 
     public int ventesJuguetaData(int idJugueta, Year any, Month mes, int dia) {
         return ventes.ventesJuguetaData(cataleg.getJugueta(idJugueta).getJugueta(), any, mes, dia);
+    }
+    public ArrayList<Venta> ventesClientData(int idClient, Year year) {
+return ventes.ventesClientData(clients.getClient(idClient), year);
+    }
+    public ArrayList<Venta> ventesClientData(int idClient, Year year, Month mes) {
+        return ventes.ventesClientData(clients.getClient(idClient), year, mes);
+    }
+    public ArrayList<Venta> ventesClientData(int idClient, Year year, Month mes, int dia) {
+        return ventes.ventesClientData(clients.getClient(idClient), year, mes, dia);
     }
 }
 

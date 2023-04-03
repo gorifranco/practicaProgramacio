@@ -40,6 +40,25 @@ public class LlistaVentes {
         }
         return temp;
     }
+    public ArrayList<Venta> ventesClientData(Client client, Year year, Month mes) {
+        ArrayList<Venta> temp = new ArrayList<>();
+        for (int i = 0; i < ventes.size(); i++) {
+            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year.getValue() && ventes.get(i).getData().getMonth().equals(mes)) {
+                temp.add(ventes.get(i));
+            }
+        }
+        return temp;
+    }
+    public ArrayList<Venta> ventesClientData(Client client, Year year, Month mes, int dia) {
+        ArrayList<Venta> temp = new ArrayList<>();
+        for (int i = 0; i < ventes.size(); i++) {
+            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year.getValue() &&
+                    ventes.get(i).getData().getMonth().equals(mes) && ventes.get(i).getData().getDayOfMonth() == dia) {
+                temp.add(ventes.get(i));
+            }
+        }
+        return temp;
+    }
 
     public int ventesJuguetaData(Jugueta jugueta, Year any) {
         int numeroVentes = 0;
