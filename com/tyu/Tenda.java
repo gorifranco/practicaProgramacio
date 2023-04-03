@@ -170,21 +170,35 @@ public class Tenda {
         this.proveidors = new ArrayList<>();
         this.compres = new ArrayList<>();
 
-        afegirMarca(new Marca("marca1", "123456789", "dir", "mail"));
-        afegirMarca(new Marca("marca2", "123456789", "dir", "mail"));
+        afegirMarca(new Marca("Lego", "123456789", "Callejón de la Rosa", "lego@gmail.com"));
+        afegirMarca(new Marca("Hot Wheels", "123456789", "Calle de la Brisa", "wheels@gmail.com"));
+        afegirMarca(new Marca("BayBlade", "98715671", "Avenida del Sol", "blade@gmail.com"));;
+        afegirMarca(new Marca("Nerf", "4891935", "Avenida del Sol", "nerf@gmail.com"));;
+        afegirMarca(new Marca("HashBro", "22891041", "Callejón del Arco", "hash@gmail.com"));;
+        afegirMarca(new Marca("Mattel", "5684658910", "Calle de la Perla.", "mattel@gmail.com"));
 
-        afegirJugueta(new Jugueta("jugueta1", marques.get(0), "desc", "tipo1", RangoEdad.CERO_A_TRES), 2.15);
-        afegirJugueta(new Jugueta("jugueta2", marques.get(1), "desc", "tipo1", RangoEdad.QUATRE_A_VUIT), 5.15);
 
-        afegirProveidor(new Proveidor("proveidor1", "123456789", "p1@gmail.com", "dir1"));
-        afegirProveidor(new Proveidor("proveidor2", "123456789", "p2@gmail.com", "dir2"));
+        afegirJugueta(new Jugueta("Set de Star Wars Lego", marques.get(0), "Set de Star Wars", "Lego", RangoEdad.QUATRE_A_VUIT), 12.15);
+        afegirJugueta(new Jugueta("R34 Skyline", marques.get(1), "R34", "Cotxo", RangoEdad.QUATRE_A_VUIT), 5.15);
+        afegirJugueta(new Jugueta("Supreme Spinner", marques.get(2), "Spinner", "Spinner", RangoEdad.NOU_A_DOTZE), 6.65);
+        afegirJugueta(new Jugueta("Pistola Nerf", marques.get(3), "Pistola", "Pistola", RangoEdad.TRETZE_A_DEVUIT), 7.85);
+        afegirJugueta(new Jugueta("Twister", marques.get(4), "Twistter", "Joc de taula", RangoEdad.TRETZE_A_DEVUIT), 9.99);
 
-        afegirClient(new Client("client1"));
-        afegirClient(new Client("client2"));
+        afegirProveidor(new Proveidor("Bandai America", "123456789", "p1@gmail.com", "Callejón de la Rosa"));
+        afegirProveidor(new Proveidor("VTech", "123456789", "p2@gmail.com", "Calle de la Brisa"));
+        afegirProveidor(new Proveidor("Goliath Games", "98715671", "p3@gmail.com", "Avenida del Sol"));
+        afegirProveidor(new Proveidor("Bord Games", "56715671", "p4@gmail.com", "Calle de los Álamos"));
+        
+
+        afegirClient(new Client("Julia"));
+        afegirClient(new Client("Juana"));
+        afegirClient(new Client("Astolfo"));
+        afegirClient(new Client("Jose Alberto"));
+        afegirClient(new Client("Dionisio Salvador"));
 
         afegirCompra(new Compra(proveidors.get(0), juguetes.get(0), LocalDate.now(), 50));
         novaVenta(new Venta(juguetes.get(1), clients.get(0), 5, 0, LocalDate.now()));
-
+        //quinProveidorTeLaJugueta(new Jugueta("Marca 1", marques.get(0), "Set de Star Wars", "", RangoEdad.QUATRE_A_VUIT));
     }
 }
 

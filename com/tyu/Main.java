@@ -5,20 +5,32 @@ public class Main {
         provesMarca();
         provesCompra();
         provesVenta();
+        Client();
+        Proveidor();
     }
 
     private static void provesMarca() {
-        System.out.println("\n----------Proves marca-------------");
+        System.out.println("\n----------Marques-------------");
         Tenda t1 = new Tenda();
         Marca m1 = t1.getMarques().get(0);
-        System.out.println(m1.getDireccio());
-        System.out.println(m1.getNom());
-        m1.setDireccio("dir2");
-        System.out.println(m1.getDireccio());
-    }
+        System.out.println("Direcció: " + m1.getDireccio());
+        System.out.println("Nom: " + m1.getNom());
+        System.out.println("----------------------------");
+        Marca m2 = t1.getMarques().get(1);
+        System.out.println("Direcció: " + m2.getDireccio());
+        System.out.println("Nom: " + m2.getNom());
+        System.out.println("----------------------------");
+        Marca m3 = t1.getMarques().get(2);
+        System.out.println("Direcció: " + m3.getDireccio());
+        System.out.println("Nom: " + m3.getNom());
+        System.out.println("----------------------------");
+        Marca m4 = t1.getMarques().get(3);
+        System.out.println("Direcció: " + m4.getDireccio());
+        System.out.println("Nom: " + m4.getNom());
+        }
 
     private static void provesCompra() {
-        System.out.println("\n----------Proves compra-------------");
+        System.out.println("\n----------Compra-------------");
         Tenda t1 = new Tenda();
         Compra c1 = t1.getCompres().get(0);
         System.out.println("Import de la compra: " + c1.getImport());
@@ -28,16 +40,34 @@ public class Main {
     }
 
     private static void provesVenta() {
-        System.out.println("\n----------Proves venta-------------");
-Tenda t1 = new Tenda();
-Venta v1 = t1.getVentes().get(0);
+        System.out.println("\n----------Venta-------------");
+        Tenda t1 = new Tenda();
+        Venta v1 = t1.getVentes().get(0);
         System.out.println("Import venta 1: " + v1.getImport());
         v1.setQuantitat(25);
         System.out.println("Import canviat: " + v1.getImport());
     }
 
-    private static void provesClient(){
-        System.out.println("\n----------Proves c lient-------------");
+    private static void Client(){
+        System.out.println("\n----------Clients-------------");
+        Tenda t1 = new Tenda();
+        Client cl1 = t1.getClients().get(0);
+        System.out.println("Client 1: " + cl1.getNom());
+        Client cl2 = t1.getClients().get(1);
+        System.out.println("Client 2: " + cl2.getNom());
+        Client cl3 = t1.getClients().get(2);
+        System.out.println("Client 3: " + cl3.getNom());
+        Client cl4 = t1.getClients().get(3);
+        System.out.println("Client 4: " + cl4.getNom());
+        Client cl5 = t1.getClients().get(4);
+        System.out.println("Client 5: " + cl5.getNom());
     }
+    private static void Proveidor(){
+        System.out.println("\n----------Proveidors-------------");
+        Tenda t1 = new Tenda();
+        Proveidor p1 = t1.getProveidors().get(0);
+        //System.out.println("Proveidor 1: " + p1.quinProveidorTeLaJugueta());
+        
 
+    }
 }
