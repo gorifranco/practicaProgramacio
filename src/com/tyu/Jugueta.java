@@ -37,4 +37,15 @@ public class Jugueta {
     public RangoEdad getRangoEdad() {
         return rangoEdad;
     }
+
+    @Override
+    public String toString() {
+        return "Jugueta{" +
+                "nom='" + nom + '\'' +
+                ", marca=" + marca +
+                ", descripcio='" + descripcio + '\'' +
+                ", tipusJugueta='" + tipusJugueta + '\'' +
+                ", rangoEdad=" + rangoEdad +
+                '}';
+    }
 }

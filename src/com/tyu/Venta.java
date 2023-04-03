@@ -48,4 +48,16 @@ public class Venta {
     public double getImport() {
         return quantitat * jugueta.getPreu() * (1 - descompte);
     }
+
+    @Override
+    public String toString() {
+        return "Venta{" +
+                "idVenta=" + idVenta +
+                ", jugueta=" + jugueta +
+                ", client=" + client +
+                ", quantitat=" + quantitat +
+                ", descompte=" + descompte +
+                ", data=" + data +
+                '}';
+    }
 }

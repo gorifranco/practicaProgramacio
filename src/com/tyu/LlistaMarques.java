@@ -42,4 +42,17 @@ public class LlistaMarques {
         }
         return null;
     }
+
+    public ArrayList<Marca> getMarques() {
+        return marques;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < marques.size() ; i++) {
+            sb.append(marques.get(i).toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }

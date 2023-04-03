@@ -37,4 +37,15 @@ public class Compra {
     public double getImport() {
         return quantitat * preu;
     }
+
+    @Override
+    public String toString() {
+        return "Compra{" +
+                "proveidor=" + proveidor +
+                ", jugueta=" + jugueta +
+                ", data=" + data +
+                ", quantitat=" + quantitat +
+                ", preu=" + preu +
+                '}';
+    }
 }

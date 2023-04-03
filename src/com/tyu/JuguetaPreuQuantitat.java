@@ -56,4 +56,14 @@ public class JuguetaPreuQuantitat {
     public boolean bastenExistencies(int quantitat) {
         return quantitat <= stock;
     }
+
+    @Override
+    public String toString() {
+        return "JuguetaPreuQuantitat{" +
+                "jugueta=" + jugueta +
+                ", preu=" + preu +
+                ", stock=" + stock +
+                ", idJugueta=" + idJugueta +
+                '}';
+    }
 }

@@ -53,4 +53,16 @@ public class LlistaProveidors {
         }
         return temp;
     }
+
+    public ArrayList<Proveidor> getProveidors() {
+        return proveidors;
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < proveidors.size() ; i++) {
+            sb.append(proveidors.get(i).toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }

@@ -46,7 +46,7 @@ public class Tenda {
                 marques.getMarca("Hot Wheels"), "Spinner", "Spinner", RangoEdad.QUATRE_A_VUIT,
                 5.15, 300, 99.99));
         cataleg.afegirJugueta(compres.comprarNovaJugueta(proveidors.getProveidor("Goliath Games"), "Supreme Spinner",
-                marques.getMarca("Pistola Nerf"), "Pistola", "Pistola", RangoEdad.QUATRE_A_VUIT,
+                marques.getMarca("Nerf"), "Pistola", "Pistola", RangoEdad.QUATRE_A_VUIT,
                 5.00, 150, 32.15));
         cataleg.afegirJugueta(compres.comprarNovaJugueta(proveidors.getProveidor("Bord Games"), "Twister",
                 marques.getMarca("HashBro"), "Twistter", "Joc de taula", RangoEdad.TRETZE_A_DEVUIT,
@@ -59,9 +59,9 @@ public class Tenda {
         clients.afegirClient("Jose Alberto");
         clients.afegirClient("Dionisio Salvador");
 
-        ventes.novaVenta(cataleg.getJugueta(0), clients.getClient(1), 25, 0);
-        ventes.novaVenta(cataleg.getJugueta(1), clients.getClient(1), 10, 0);
-        ventes.novaVenta(cataleg.getJugueta(0), clients.getClient(2), 50, 0.15);
+        ventes.novaVenta(cataleg.getJugueta(1), clients.getClient(1), 25, 0);
+        ventes.novaVenta(cataleg.getJugueta(2), clients.getClient(1), 10, 0);
+        ventes.novaVenta(cataleg.getJugueta(1), clients.getClient(2), 50, 0.15);
 
     }
 
@@ -93,17 +93,50 @@ public class Tenda {
         compres.comprarJuguetaExistent(proveidors.getProveidor(nomProveidor), cataleg.getJugueta(idJugueta), quantitat, preuCompra);
     }
 
-    public void comprarNovaJugueta(String nomProveidor, String nomJugueta, Marca marcaJugueta, String descripcioJugueta,
+    public void comprarNovaJugueta(String nomProveidor, String nomJugueta, String marcaJugueta, String descripcioJugueta,
                                    String tipusJugueta, RangoEdad rangoEdad, double preuCompra, int quantitat, double preuVenta) {
-        cataleg.afegirJugueta(compres.comprarNovaJugueta(proveidors.getProveidor(nomProveidor), nomJugueta, marcaJugueta, descripcioJugueta, tipusJugueta, rangoEdad, preuCompra, quantitat, preuVenta));
+        cataleg.afegirJugueta(compres.comprarNovaJugueta(proveidors.getProveidor(nomProveidor), nomJugueta, marques.getMarca(marcaJugueta), descripcioJugueta, tipusJugueta, rangoEdad, preuCompra, quantitat, preuVenta));
     }
 
     public void vendreJugueta(int idJugueta, int idClient, int quantitat, double descompte) {
         ventes.novaVenta(cataleg.getJugueta(idJugueta), clients.getClient(idClient), quantitat, descompte);
     }
+    public void afegirJugueta(String nom, Marca marca, String descripcio, String tipusJugueta, RangoEdad rangEdat, double preu, int quantitat) {
+        cataleg.afegirJugueta(nom,marca,descripcio,tipusJugueta,rangEdat,preu,quantitat);
+    }
+    public void llevarJugueta(int idJugueta) {
+cataleg.llevarJugueta(idJugueta);
+    }
 
 
-// Mètodes llistaVentes
+    //Getters llistes
+
+    public LlistaJuguetes getCataleg() {
+        return cataleg;
+    }
+
+    public LlistaVentes getVentes() {
+        return ventes;
+    }
+
+    public LlistaClients getClients() {
+        return clients;
+    }
+
+    public LlistaMarques getMarques() {
+        return marques;
+    }
+
+    public LlistaProveidors getProveidors() {
+        return proveidors;
+    }
+
+    public LlistaCompres getCompres() {
+        return compres;
+    }
+
+
+    // Mètodes llistaVentes
 
     public double facturacioClient(int idClient) {
         return ventes.facturacioClient(clients.getClient(idClient));
@@ -113,30 +146,30 @@ public class Tenda {
         return ventes.facturacioJuguetaMesAnterior(cataleg.getJugueta(idJugueta).getJugueta());
     }
 
-    public int ventesJuguetaData(int idJugueta, Year any) {
+    public ArrayList<Venta>  ventesJuguetaData(int idJugueta, int any) {
         return ventes.ventesJuguetaData(cataleg.getJugueta(idJugueta).getJugueta(), any);
     }
 
-    public int ventesJuguetaData(int idJugueta, Year any, Month mes) {
+    public ArrayList<Venta>  ventesJuguetaData(int idJugueta, int any, int mes) {
         return ventes.ventesJuguetaData(cataleg.getJugueta(idJugueta).getJugueta(), any, mes);
     }
 
-    public int ventesJuguetaData(int idJugueta, Year any, Month mes, int dia) {
+    public ArrayList<Venta>  ventesJuguetaData(int idJugueta, int any, int mes, int dia) {
         return ventes.ventesJuguetaData(cataleg.getJugueta(idJugueta).getJugueta(), any, mes, dia);
     }
-    public ArrayList<Venta> ventesClientData(int idClient, Year year) {
+    public ArrayList<Venta> ventesClientData(int idClient, int year) {
 return ventes.ventesClientData(clients.getClient(idClient), year);
     }
-    public ArrayList<Venta> ventesClientData(int idClient, Year year, Month mes) {
+    public ArrayList<Venta> ventesClientData(int idClient, int year, int mes) {
         return ventes.ventesClientData(clients.getClient(idClient), year, mes);
     }
-    public ArrayList<Venta> ventesClientData(int idClient, Year year, Month mes, int dia) {
+    public ArrayList<Venta> ventesClientData(int idClient, int year, int mes, int dia) {
         return ventes.ventesClientData(clients.getClient(idClient), year, mes, dia);
     }
+    public ArrayList<String> quinProveidorTeLaJugueta(String nomJugueta) {
+return proveidors.quinProveidorTeLaJugueta(nomJugueta);
+    }
+    public ArrayList<JuguetaPreuQuantitat> juguetesPerMarca(String nomMarca) {
+return  cataleg.juguetesPerMarca(nomMarca);
+    }
 }
-
-
-
-
-
-

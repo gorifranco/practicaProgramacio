@@ -47,4 +47,17 @@ public class LlistaClients {
     private boolean clientHiEs(int idClient) {
         return idClient <= clients.size();
     }
+
+    public ArrayList<Client> getClients() {
+        return clients;
+    }
+
+    @Override
+    public String toString() {
+StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < clients.size() ; i++) {
+            sb.append(clients.get(i).toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }

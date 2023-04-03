@@ -31,62 +31,62 @@ public class LlistaVentes {
         return idVenta <= ventes.size();
     }
 
-    public ArrayList<Venta> ventesClientData(Client client, Year year) {
+    public ArrayList<Venta> ventesClientData(Client client, int year) {
         ArrayList<Venta> temp = new ArrayList<>();
         for (int i = 0; i < ventes.size(); i++) {
-            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year.getValue()) {
+            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year) {
                 temp.add(ventes.get(i));
             }
         }
         return temp;
     }
-    public ArrayList<Venta> ventesClientData(Client client, Year year, Month mes) {
+    public ArrayList<Venta> ventesClientData(Client client, int year, int mes) {
         ArrayList<Venta> temp = new ArrayList<>();
         for (int i = 0; i < ventes.size(); i++) {
-            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year.getValue() && ventes.get(i).getData().getMonth().equals(mes)) {
+            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year && ventes.get(i).getData().getMonth().getValue() == mes) {
                 temp.add(ventes.get(i));
             }
         }
         return temp;
     }
-    public ArrayList<Venta> ventesClientData(Client client, Year year, Month mes, int dia) {
+    public ArrayList<Venta> ventesClientData(Client client, int year, int mes, int dia) {
         ArrayList<Venta> temp = new ArrayList<>();
         for (int i = 0; i < ventes.size(); i++) {
-            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year.getValue() &&
-                    ventes.get(i).getData().getMonth().equals(mes) && ventes.get(i).getData().getDayOfMonth() == dia) {
+            if (ventes.get(i).getClient().equals(client) && ventes.get(i).getData().getYear() == year &&
+                    ventes.get(i).getData().getMonth().getValue() == mes && ventes.get(i).getData().getDayOfMonth() == dia) {
                 temp.add(ventes.get(i));
             }
         }
         return temp;
     }
 
-    public int ventesJuguetaData(Jugueta jugueta, Year any) {
-        int numeroVentes = 0;
+    public ArrayList<Venta>  ventesJuguetaData(Jugueta jugueta, int any) {
+        ArrayList<Venta> temp = new ArrayList<>();
         for (int i = 0; i < ventes.size(); i++) {
-            if (ventes.get(i).getJugueta().getJugueta().equals(jugueta) && ventes.get(i).getData().getYear() == any.getValue()) {
-                numeroVentes += ventes.get(i).getQuantitat();
+            if (ventes.get(i).getJugueta().getJugueta().equals(jugueta) && ventes.get(i).getData().getYear() == any) {
+                temp.add(ventes.get(i));
             }
         }
-        return numeroVentes;
+        return temp;
     }
-    public int ventesJuguetaData(Jugueta jugueta, Year any, Month mes) {
-        int numeroVentes = 0;
+    public ArrayList<Venta>  ventesJuguetaData(Jugueta jugueta, int any, int mes) {
+        ArrayList<Venta> temp = new ArrayList<>();
         for (int i = 0; i < ventes.size(); i++) {
-            if (ventes.get(i).getJugueta().getJugueta().equals(jugueta) && ventes.get(i).getData().getYear() == any.getValue() && ventes.get(i).getData().getMonth().equals(mes)) {
-                numeroVentes += ventes.get(i).getQuantitat();
+            if (ventes.get(i).getJugueta().getJugueta().equals(jugueta) && ventes.get(i).getData().getYear() == any && ventes.get(i).getData().getMonth().getValue() == mes) {
+                temp.add(ventes.get(i));
             }
         }
-        return numeroVentes;
+        return temp;
     }
-    public int ventesJuguetaData(Jugueta jugueta, Year any, Month mes, int dia) {
-        int numeroVentes = 0;
+    public ArrayList<Venta>  ventesJuguetaData(Jugueta jugueta, int any, int mes, int dia) {
+        ArrayList<Venta> temp = new ArrayList<>();
         for (int i = 0; i < ventes.size(); i++) {
-            if (ventes.get(i).getJugueta().getJugueta().equals(jugueta) && ventes.get(i).getData().getYear() == any.getValue() && ventes.get(i).getData().getMonth().equals(mes)
-            && ventes.get(i).getData().getDayOfMonth() == dia) {
-                numeroVentes += ventes.get(i).getQuantitat();
+            if (ventes.get(i).getJugueta().getJugueta().equals(jugueta) && ventes.get(i).getData().getYear() == any &&
+                    ventes.get(i).getData().getMonth().getValue() == mes && ventes.get(i).getData().getDayOfMonth() == dia) {
+                temp.add(ventes.get(i));
             }
         }
-        return numeroVentes;
+        return temp;
     }
 
 
@@ -121,5 +121,17 @@ public class LlistaVentes {
             return resultat;
         }
         return -1;
+    }
+
+    public ArrayList<Venta> getVentes() {
+        return ventes;
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < ventes.size() ; i++) {
+            sb.append(ventes.get(i).toString()).append("\n");
+        }
+        return sb.toString();
     }
 }

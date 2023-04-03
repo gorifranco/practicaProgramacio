@@ -74,5 +74,16 @@ public class Proveidor {
     public String proveidorJugueta(String nomJugueta) {
         return this.nom + ": " + getPreuJugueta(nomJugueta);
     }
+
+    @Override
+    public String toString() {
+        return "Proveidor{" +
+                "nom='" + nom + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", direccio='" + direccio + '\'' +
+                ", cataleg=" + cataleg +
+                '}';
+    }
 }
 

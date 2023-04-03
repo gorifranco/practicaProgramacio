@@ -52,4 +52,14 @@ public class Marca {
     public void seteMail(String eMail) {
         this.eMail = eMail;
     }
+
+    @Override
+    public String toString() {
+        return "Marca{" +
+                "nom='" + nom + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", direccio='" + direccio + '\'' +
+                ", eMail='" + eMail + '\'' +
+                '}';
+    }
 }

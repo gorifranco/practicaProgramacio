@@ -48,4 +48,12 @@ public class LlistaJuguetes {
         }
         return temp;
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < juguetes.size() ; i++) {
+            sb.append(juguetes.get(i).toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }

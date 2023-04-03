@@ -19,8 +19,20 @@ public class LlistaCompres {
                                                    String tipusJugueta, RangoEdad rangoEdad, double preuCompra, int quantitat, double preuVenta) {
 
         Jugueta jugueta = new Jugueta(nomJugueta, marcaJugueta, descripcioJugueta, tipusJugueta, rangoEdad);
-
         compres.add(new Compra(proveidor, jugueta, quantitat, preuCompra));
         return new JuguetaPreuQuantitat(jugueta, preuVenta, quantitat);
+    }
+
+    public ArrayList<Compra> getCompres() {
+        return compres;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < compres.size() ; i++) {
+            sb.append(compres.get(i).toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
