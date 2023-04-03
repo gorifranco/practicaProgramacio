@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05e7744b-d62d-4f80-8b79-404c35827c5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practica.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Compra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Jugueta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/JuguetaPreuQuantitat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/LlistaClients.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/LlistaCompres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/LlistaJuguetes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/LlistaMarques.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/LlistaProveidors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/LlistaVentes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Marca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Proveidor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/RangoEdad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Tenda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tyu/Venta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -76,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680533124543</updated>
-      <workItem from="1680533126108" duration="11431000" />
+      <workItem from="1680533126108" duration="13548000" />
     </task>
     <servers />
   </component>
